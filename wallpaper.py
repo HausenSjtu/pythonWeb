@@ -31,7 +31,7 @@ for j in range (startPage,endPage+1):
                      h, w = img.shape[0:2]
                      if h > w:
                             os.remove(fileName)
-                     pec = ((j-startPage)+min([i,20])/15.0)/(endPage-startPage+1)
+                     pec = ((j-startPage)+min([i,20])/20.0)/(endPage-startPage+1)
                      pec *=100
                      pec = round(pec,0)
                      print 'mission completed\t'+str(pec)+'%'
