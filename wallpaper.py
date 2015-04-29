@@ -6,15 +6,23 @@ import cv2
 ##from PIL import Image
 ##import cStringIO
 
-startPage = 5
-endPage = 5
+startPage = 17
+endPage = 30
 
 
 path = os.getcwd()
 
 for j in range (startPage,endPage+1):
-       web = urllib2.urlopen('https://yande.re/post?page='+str(j)+'&tags=wallpaper')
-       content = web.read()
+       try:
+              r = urllib2.Request('https://yande.re/post?page='+str(j)+'&tags=wallpaper')
+##       web = urllib2.urlopen('https://yande.re/post?page='+str(j)+'&tags=wallpaper')
+              web = urllib2.urlopen(r, data=None, timeout=3)
+              content = web.read
+       except:
+              j = min([j+1,endPage])
+              continue
+
+       
        pics = re.findall(r'https://files.*?jpg',content)
        
        for i in range (len(pics)):
@@ -33,7 +41,7 @@ for j in range (startPage,endPage+1):
                             os.remove(fileName)
                      pec = ((j-startPage)+min([i,20])/20.0)/(endPage-startPage+1)
                      pec *=100
-                     pec = round(pec,0)
+                     pec = round(pec,2)
                      print 'mission completed\t'+str(pec)+'%'
                             
                      

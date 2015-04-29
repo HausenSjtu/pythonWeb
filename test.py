@@ -7,6 +7,18 @@ import cStringIO
 import os
 
 
+
+r = urllib2.Request('https://www.google.com')
+f = urllib2.urlopen(r, data=None, timeout=3)
+result =  f.read()
+print result
+
+
+
+
+
+
+
 ##z='hi,ni\\ hao'
 ##print z.replace('\\','\\\\')
 ##print z
@@ -16,12 +28,14 @@ import os
 ##b = re.findall(r'.*_(?!sa).*_.*?',a)
 ##print b
 
-
-i=10
-l=['0','1','2']
-a=10/15.0
-a=round(a,2)
-print a
+
+
+##
+##i=10
+##l=['0','1','2']
+##a=10/15.0
+##a=round(a,2)
+##print a
 
 
 
