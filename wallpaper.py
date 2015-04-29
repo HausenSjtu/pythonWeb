@@ -7,7 +7,7 @@ import cv2
 ##import cStringIO
 
 startPage = 31
-endPage = 50
+endPage = 31
 
 
 path = os.getcwd()
@@ -15,10 +15,12 @@ path = os.getcwd()
 for j in range (startPage,endPage+1):
        try:
               r = urllib2.Request('https://yande.re/post?page='+str(j)+'&tags=wallpaper')
+##              r = urllib2.Request('http://www.google.com')
 ##       web = urllib2.urlopen('https://yande.re/post?page='+str(j)+'&tags=wallpaper')
               web = urllib2.urlopen(r, data=None, timeout=3)
               content = web.read()
        except:
+              print str(j)+'\tfailed~'
               j = min([j+1,endPage])
               continue
 
