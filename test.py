@@ -8,10 +8,16 @@ import os
 
 
 
-r = urllib2.Request('https://www.google.com')
-f = urllib2.urlopen(r, data=None, timeout=3)
-result =  f.read()
-print result
+pic = 'https://files.yande.re/image/e27940872a5a827659c3ce943640cdcb/yande.re%20294886%20asian_clothes%20ass%20miko%20naked_cape%20thomas%20wallpaper.jpg'
+urllib.urlretrieve(pic, 'hahaha.jpg')
+
+
+
+
+##r = urllib2.Request('https://www.google.com')
+##f = urllib2.urlopen(r, data=None, timeout=3)
+##result =  f.read()
+##print result
 
 
 

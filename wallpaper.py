@@ -6,8 +6,8 @@ import cv2
 ##from PIL import Image
 ##import cStringIO
 
-startPage = 31
-endPage = 31
+startPage = 61
+endPage = 70
 
 
 path = os.getcwd()
@@ -36,6 +36,8 @@ for j in range (startPage,endPage+1):
 ##              print im
               if pic.find('sample')==-1:
                      fileName = path+'\\pics\\'+str(j)+'p_'+str(i)+'.jpg'
+##                     print pic
+##                     print fileName
                      urllib.urlretrieve(pic, fileName)
                      img = cv2.imread(fileName)
                      h, w = img.shape[0:2]
